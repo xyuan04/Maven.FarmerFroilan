@@ -1,5 +1,4 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 
 abstract class Animal {
 String type;
@@ -41,6 +40,12 @@ Tomato yield();
 }
 
 class Horse {
+boolean mounted = false;
+int timesRode = 0;
+
+void mounted();
+void dismoounted();
+void clearRides();
 }
 
 class Chicken {
@@ -49,6 +54,8 @@ boolean hasBeenFertilized();
 }
 
 interface Rideable {
+void mounted();
+void dismoounted();
 }
 
 interface Rider {
@@ -80,8 +87,13 @@ int sizeofField();
 
 abstract class Vehicle {
 String type;
+boolean mounted = false;
+int timesRode = 0;
 
 String makeNoise();
+void mounted();
+void dismounted();
+void clearRides();
 }
 
 interface FarmVehicle {
@@ -180,13 +192,4 @@ Rider <--- Farmer
 Botanist <--- Farmer
 
 
-
-
-'autonumber
-'
-'Alice -> Bob: Authentication Request
-'Bob --> Alice: Authentication Response
-'
-'Alice -> Bob: Another authentication Request
-'Alice <-- Bob: another authentication Response
 @enduml
