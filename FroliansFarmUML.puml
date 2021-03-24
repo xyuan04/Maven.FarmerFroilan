@@ -12,6 +12,9 @@ void clearFood();
 String makeNoise();
 }
 
+interface Edible {
+}
+
 interface Eater {
 void eat(Edible food);
 }
@@ -51,6 +54,9 @@ void clearRides();
 class Chicken {
 Edible yield();
 boolean hasBeenFertilized();
+}
+
+class Egg {
 }
 
 interface Rideable {
@@ -159,6 +165,11 @@ ArrayList<ChickenCoop>;
 FarmHouse;
 }
 
+class Corn {}
+
+class Tomato {}
+
+
 Eater <--- Animal
 NoiseMaker <--- Animal
 
@@ -178,6 +189,10 @@ Vehicle <|--- Aircraft
 
 FarmVehicle <- CropDuster
 Aircraft <|--- CropDuster
+
+Edible <--- Egg
+Edible <--- Tomato
+Edible <--- Corn
 
 Produce <-- Crop
 
