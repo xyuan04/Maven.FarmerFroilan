@@ -1,0 +1,192 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class Animal {
+String type;
+ArrayList<Edible> foodEaten;
+
+String getType();
+void setType();
+void eat(Edible food);
+int howMuchFoodEaten();
+void clearFood();
+String makeNoise();
+}
+
+interface Eater {
+void eat(Edible food);
+}
+
+interface NoiseMaker {
+String makeNoise()
+}
+
+interface Produce {
+Edible yield();
+boolean hasBeenFertilized();
+}
+
+abstract class Crop {
+Edible yield();
+boolean hasBeenFertilized();
+boolean hasBeenHarvested();
+}
+
+class CornStalk {
+EarCorn yield();
+}
+
+class TomatoPlant {
+Tomato yield();
+}
+
+class Horse {
+}
+
+class Chicken {
+Edible yield();
+boolean hasBeenFertilized();
+}
+
+interface Rideable {
+}
+
+interface Rider {
+mount(Rideable)
+dismount()
+}
+
+interface Botanist {
+plant(Crop, CropRow)
+}
+
+class CropRow {
+ArrayList<Crop> crops;
+
+ArrayList<Crop> getCrop();
+void addCrop();
+void removeCrop();
+int sizeOfRow();
+}
+
+class Field {
+HashTable<Integer, CropRow>;
+
+ArrayList<CropRow> getCropRow();
+void addCropRow();
+void removeCropRow();
+int sizeofField();
+}
+
+abstract class Vehicle {
+String type;
+
+String makeNoise();
+}
+
+interface FarmVehicle {
+operate(Farm);
+}
+
+class Tractor {
+Crop harvest();
+}
+
+abstract class Aircraft {
+fly()
+}
+
+class CropDuster {
+operate(Farm);
+fertilize(CropRow);
+}
+
+abstract class Person {
+ArrayList<Edible> foodEaten;
+
+String makeNoise();
+void eat(Edible food);
+}
+
+class Farmer {
+plant(Crop, CropRow)
+mount(Rideable));
+dismount();
+}
+
+class Stable {
+ArrayList<Horse>;
+
+void addHorse();
+void removeHorse();
+int sizeOfStable();
+void clearStable();
+}
+
+class FarmHouse {
+ArrayList<Person>;
+
+void addPerson();
+void removePerson();
+int sizeOfFarmHouse();
+void clearFarmHouse();
+}
+
+class ChickenCoop {
+ArrayList<Chicken>;
+
+void addChicken();
+void removeChicken();
+int sizeOfChickenCoop();
+void clearChickenCoop();
+}
+
+class Farm {
+ArrayList<Stable>;
+ArrayList<ChickenCoop>;
+FarmHouse;
+}
+
+Eater <--- Animal
+NoiseMaker <--- Animal
+
+Animal <|--- Horse
+Rideable <--- Horse
+
+Animal <|--- Chicken
+Produce <--- Chicken
+
+NoiseMaker <--- Vehicle
+Rideable <--- Vehicle
+
+Vehicle <|--- Tractor
+FarmVehicle <--- Tractor
+
+Vehicle <|--- Aircraft
+
+FarmVehicle <- CropDuster
+Aircraft <|--- CropDuster
+
+Produce <-- Crop
+
+Crop <|-- CornStalk
+
+Crop <|-- TomatoPlant
+
+Eater <- Farmer
+NoiseMaker <--- Farmer
+Person <|--- Farmer
+Rider <--- Farmer
+Botanist <--- Farmer
+
+
+
+
+'autonumber
+'
+'Alice -> Bob: Authentication Request
+'Bob --> Alice: Authentication Response
+'
+'Alice -> Bob: Another authentication Request
+'Alice <-- Bob: another authentication Response
+@enduml
