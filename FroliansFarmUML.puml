@@ -2,7 +2,7 @@
 
 abstract class Animal {
 String type;
-ArrayList<Edible> foodEaten;
+ArrayList<Corn> foodEaten;
 
 String getType();
 void setType();
@@ -15,16 +15,19 @@ String makeNoise();
 interface Edible {
 }
 
-interface Eater {
-void eat(Edible food);
+interface Vegetable {
+}
+
+interface Eater<typeOfFood extends Edible> {
+void eat(typeOfFood food);
 }
 
 interface NoiseMaker {
 String makeNoise()
 }
 
-interface Produce {
-Edible yield();
+interface Produce<typeOfFood extends Edible> {
+typeOfFood yield();
 boolean hasBeenFertilized();
 }
 
@@ -35,7 +38,7 @@ boolean hasBeenHarvested();
 }
 
 class CornStalk {
-EarCorn yield();
+Corn yield();
 }
 
 class TomatoPlant {
@@ -47,12 +50,12 @@ boolean mounted = false;
 int timesRode = 0;
 
 void mounted();
-void dismoounted();
+void dismounted();
 void clearRides();
 }
 
 class Chicken {
-Edible yield();
+Egg yield();
 boolean hasBeenFertilized();
 }
 
@@ -61,7 +64,7 @@ class Egg {
 
 interface Rideable {
 void mounted();
-void dismoounted();
+void dismounted();
 }
 
 interface Rider {
@@ -111,7 +114,7 @@ Crop harvest();
 }
 
 abstract class Aircraft {
-fly()
+fly();
 }
 
 class CropDuster {
@@ -205,6 +208,9 @@ NoiseMaker <--- Farmer
 Person <|--- Farmer
 Rider <--- Farmer
 Botanist <--- Farmer
+
+Vegetable <--- Corn
+Vegetable <--- Tomato
 
 
 @enduml
