@@ -1,6 +1,7 @@
 @startuml
 
 abstract class Animal {
+String name;
 String type;
 ArrayList<Corn> foodEaten;
 
@@ -77,9 +78,9 @@ plant(Crop, CropRow)
 }
 
 class CropRow {
-ArrayList<Crop> crops;
+Stack<Crop> crops;
 
-ArrayList<Crop> getCrop();
+Stack<Crop> getCrops();
 void addCrop();
 void removeCrop();
 int sizeOfRow();
@@ -88,7 +89,7 @@ int sizeOfRow();
 class Field {
 HashTable<Integer, CropRow>;
 
-ArrayList<CropRow> getCropRow();
+Stack<CropRow> getCropRow();
 void addCropRow();
 void removeCropRow();
 int sizeofField();
@@ -133,12 +134,14 @@ class Farmer {
 plant(Crop, CropRow)
 mount(Rideable));
 dismount();
+feed();
 }
 
 class Stable {
 ArrayList<Horse>;
 
 void addHorse();
+Horse getHorse();
 void removeHorse();
 int sizeOfStable();
 void clearStable();
@@ -194,8 +197,6 @@ FarmVehicle <- CropDuster
 Aircraft <|--- CropDuster
 
 Edible <--- Egg
-Edible <--- Tomato
-Edible <--- Corn
 
 Produce <-- Crop
 
@@ -208,6 +209,8 @@ NoiseMaker <--- Farmer
 Person <|--- Farmer
 Rider <--- Farmer
 Botanist <--- Farmer
+
+Edible <|-- Vegetable
 
 Vegetable <--- Corn
 Vegetable <--- Tomato
