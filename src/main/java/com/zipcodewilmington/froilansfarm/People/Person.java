@@ -1,4 +1,6 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.People;
+
+import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 
 import java.util.ArrayList;
 

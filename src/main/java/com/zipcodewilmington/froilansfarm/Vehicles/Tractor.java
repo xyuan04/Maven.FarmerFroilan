@@ -1,4 +1,7 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Vehicles;
+
+import com.zipcodewilmington.froilansfarm.Farm;
+import com.zipcodewilmington.froilansfarm.Interfaces.FarmVehicle;
 
 public class Tractor extends Vehicle implements FarmVehicle {
     private Farm currentFarm;

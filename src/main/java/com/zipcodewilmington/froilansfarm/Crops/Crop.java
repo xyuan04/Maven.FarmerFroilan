@@ -1,6 +1,9 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Crops;
 
-public abstract class Crop implements Produce<Vegetable>{
+import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
+import com.zipcodewilmington.froilansfarm.Interfaces.Vegetable;
+
+public abstract class Crop implements Produce<Vegetable> {
     private boolean fertilized = false;
     private boolean harvested = false;
 

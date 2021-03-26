@@ -1,6 +1,9 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Animals;
 
-public class Chicken extends Animal implements Produce<Egg>{
+import com.zipcodewilmington.froilansfarm.Food.Egg;
+import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
+
+public class Chicken extends Animal implements Produce<Egg> {
     private boolean fertilized = false;
 
     public Chicken(String name) {

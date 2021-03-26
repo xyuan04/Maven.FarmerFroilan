@@ -1,4 +1,9 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.People;
+
+import com.zipcodewilmington.froilansfarm.Animals.Animal;
+import com.zipcodewilmington.froilansfarm.Crops.Crop;
+import com.zipcodewilmington.froilansfarm.Interfaces.*;
+import com.zipcodewilmington.froilansfarm.Storage.CropRow;
 
 public class Farmer extends Person implements Eater<Edible>, NoiseMaker, Botanist, Rider {
     private Rideable currentlyRiding;

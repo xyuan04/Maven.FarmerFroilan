@@ -1,6 +1,9 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Vehicles;
 
-public abstract class Vehicle implements NoiseMaker, Rideable{
+import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
+
+public abstract class Vehicle implements NoiseMaker, Rideable {
     private String type;
     private boolean mounted = false;
     private int timesRode = 0;

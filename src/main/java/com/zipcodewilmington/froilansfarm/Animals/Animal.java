@@ -1,4 +1,8 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Animals;
+
+import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
+import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.Interfaces.Vegetable;
 
 import java.util.ArrayList;
 import java.util.List;

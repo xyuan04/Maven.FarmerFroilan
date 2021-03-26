@@ -78,9 +78,9 @@ plant(Crop, CropRow)
 }
 
 class CropRow {
-Stack<Crop> crops;
+ArrayList<Crop> crops;
 
-Stack<Crop> getCrops();
+ArrayList<Crop> getCrops();
 void addCrop();
 void removeCrop();
 int sizeOfRow();
@@ -89,7 +89,7 @@ int sizeOfRow();
 class Field {
 HashTable<Integer, CropRow>;
 
-Stack<CropRow> getCropRow();
+CropRow getCropRow();
 void addCropRow();
 void removeCropRow();
 int sizeofField();

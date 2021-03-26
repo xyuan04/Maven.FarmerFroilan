@@ -1,4 +1,6 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Animals;
+
+import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 
 public class Horse extends Animal implements Rideable {
     private boolean mounted = false;
