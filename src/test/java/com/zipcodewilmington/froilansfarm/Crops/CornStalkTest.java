@@ -56,9 +56,22 @@ public class CornStalkTest {
 
     @Test
     public void harvest() {
+        //Given: Above
+
+        //When:
+        corny.harvest();
+
+        //Then:
+        assertTrue(corny.hasBeenHarvested());
     }
 
     @Test
     public void hasBeenHarvested() {
+        //Given: Above
+
+        //When:
+
+        //Then:
+        assertFalse(corny.hasBeenHarvested());
     }
 }
