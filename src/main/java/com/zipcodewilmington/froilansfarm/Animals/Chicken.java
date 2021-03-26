@@ -11,7 +11,10 @@ public class Chicken extends Animal implements Produce<Egg> {
     }
 
     public Egg yield() {
-        return new Egg();
+        if(fertilized == true) {
+            return new Egg();
+        }
+        return null;
     }
 
     public void fertilize() {

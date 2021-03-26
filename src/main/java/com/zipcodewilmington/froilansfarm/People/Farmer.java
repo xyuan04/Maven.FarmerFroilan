@@ -18,6 +18,11 @@ public class Farmer extends Person implements Eater<Edible>, NoiseMaker, Botanis
 
     public void mount(Rideable ride) {
         currentlyRiding = ride;
+        ride.riding(this);
+    }
+
+    public void fertilizeProduce(Produce produce) {
+        produce.fertilize();
     }
 
     public void dismount() {
