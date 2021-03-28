@@ -13,8 +13,6 @@ import com.zipcodewilmington.froilansfarm.Storage.*;
 import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicles.Tractor;
 
-import java.util.ArrayList;
-
 public class Farm {
     public Stable stable1;
     public Stable stable2;
@@ -23,8 +21,8 @@ public class Farm {
     public ChickenCoop chickenCoop2;
     public ChickenCoop chickenCoop3;
     public ChickenCoop chickenCoop4;
-    public ArrayList<Edible> edibleStorage;
-    public ArrayList<Vegetable> animalFoodStorage;
+    public EdibleStorage<Edible> edibleStorage;
+    public EdibleStorage<Vegetable> animalFoodStorage;
     public FarmHouse farmHouse;
     public Field field;
     public Tractor tractor;
@@ -40,13 +38,17 @@ public class Farm {
         chickenCoop2 = new ChickenCoop();
         chickenCoop3 = new ChickenCoop();
         chickenCoop4 = new ChickenCoop();
-        edibleStorage = new ArrayList<Edible>();
-        animalFoodStorage = new ArrayList<Vegetable>();
+        edibleStorage = new EdibleStorage<Edible>();
+        animalFoodStorage = new EdibleStorage<Vegetable>();
         tractor = new Tractor();
         cropDuster = new CropDuster();
+
+        instantiateAnimals();
+        instantiateField();
+        instantiateFood();
     }
 
-    public ArrayList<Edible> getEdibleStorage() {
+    public EdibleStorage getEdibleStorage() {
         return edibleStorage;
     }
 
@@ -105,16 +107,16 @@ public class Farm {
     public void instantiateFood() {
         int counter = 0;
         while (counter < 100) {
-            edibleStorage.add(new Corn());
-            edibleStorage.add(new Tomato());
-            edibleStorage.add(new Egg());
+            edibleStorage.addFood(new Egg());
+            edibleStorage.addFood(new Tomato());
+            edibleStorage.addFood(new Egg());
             counter++;
         }
 
         int animalCounter = 0;
         while (animalCounter < 100) {
-            animalFoodStorage.add(new Corn());
-            animalFoodStorage.add(new Tomato());
+            animalFoodStorage.addFood(new Corn());
+            animalFoodStorage.addFood(new Tomato());
             animalCounter++;
         }
     }

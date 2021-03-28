@@ -7,10 +7,9 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Vegetable;
 public class CornStalk extends Crop {
 
     public Vegetable yield() {
-        if(this.hasBeenFertilized() == true) {
+        if(this.hasBeenFertilized()) {
             return new Corn();
-        }
-        return null;
+        } else return null;
     }
 
 }

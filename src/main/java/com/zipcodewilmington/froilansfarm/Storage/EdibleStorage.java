@@ -5,28 +5,32 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class EdibleStorage {
-    private ArrayList<Edible> edibleStorage;
+public class EdibleStorage<TypeOfFood extends Edible> {
+    private ArrayList<TypeOfFood> edibleStorage;
 
     public EdibleStorage() {
-        edibleStorage = new ArrayList<Edible>();
+        edibleStorage = new ArrayList<TypeOfFood>();
     }
 
-    public ArrayList<Edible> getEdibleStorage() {
+    public ArrayList<TypeOfFood> getEdibleStorage() {
         return edibleStorage;
     }
 
-    public void addFood(Edible edible) {
+    public void addFood(TypeOfFood edible) {
         edibleStorage.add(edible);
     }
 
-    public void removeFood(Edible edible) {
+    public void removeFood(TypeOfFood edible) {
         edibleStorage.remove(edible);
     }
 
-    public Edible getFood() {
-        Iterator<Edible> iterator = edibleStorage.iterator();
+    public TypeOfFood getFood() {
+        Iterator<TypeOfFood> iterator = edibleStorage.iterator();
 
         return iterator.next();
+    }
+
+    public int size() {
+        return edibleStorage.size();
     }
 }

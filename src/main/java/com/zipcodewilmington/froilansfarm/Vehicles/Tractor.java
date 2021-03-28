@@ -16,10 +16,12 @@ public class Tractor extends Vehicle implements FarmVehicle {
         currentFarm = farm;
         Field currentField = currentFarm.getField();
 
-        for(int i = 0; i < currentField.sizeOfField(); i++) {
+        for(int i = 1; i <= currentField.sizeOfField(); i++) {
             CropRow currentCropRow = currentField.getCropRow(i);
-            for (int j = 0; j < currentCropRow.sizeOfRow(); j++) {
-                farm.getEdibleStorage().add(currentCropRow.getCrop().yield());
+            for (int j = currentCropRow.sizeOfRow()-1; j >= 0; j--) {
+                if(currentCropRow.crops.get(j).hasBeenFertilized()) {
+                    farm.getEdibleStorage().addFood(currentCropRow.getCrop().yield());
+                }
             }
         }
     }
