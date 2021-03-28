@@ -19,11 +19,12 @@ public class CropRow {
     public Crop getCrop() {
         Iterator<Crop> cropIterator = crops.iterator();
         Crop currentCrop = null;
-        if(cropIterator.hasNext()) {
+        while (cropIterator.hasNext()) {
             currentCrop = cropIterator.next();
             cropIterator.remove();
+            return currentCrop;
         }
-        return currentCrop;
+        return null;
     }
     
     public ArrayList<Crop> getCropRow() {
