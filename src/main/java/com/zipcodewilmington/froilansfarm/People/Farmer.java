@@ -33,6 +33,10 @@ public class Farmer extends Person implements Eater<Edible>, NoiseMaker, Botanis
         animal.eat(food);
     }
 
+    public Rideable getCurrentlyRiding() {
+        return currentlyRiding;
+    }
+
     @Override
     public String makeNoise() {
         return "YEEEHAW!";
