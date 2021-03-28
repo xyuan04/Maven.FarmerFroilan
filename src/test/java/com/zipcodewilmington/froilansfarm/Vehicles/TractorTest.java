@@ -52,6 +52,8 @@ public class TractorTest {
     public void operate1Test() {
         //Given:
         CropRow currentCropRow = farm.field.getCropRow(1);
+        farm.getFarmHouse().getFroilan().mount(tractor);
+        farm.getFarmHouse().getFroilanda().mount(farm.cropDuster);
 
         //When:
         farm.cropDuster.operate(farm);
@@ -65,6 +67,8 @@ public class TractorTest {
     public void operate2Test() {
         //Given:
         CropRow currentCropRow = farm.field.getCropRow(2);
+        farm.getFarmHouse().getFroilan().mount(tractor);
+        farm.getFarmHouse().getFroilanda().mount(farm.cropDuster);
 
         //When:
         farm.cropDuster.operate(farm);
@@ -78,6 +82,8 @@ public class TractorTest {
     public void operate3Test() {
         //Given:
         CropRow currentCropRow = farm.field.getCropRow(3);
+        farm.getFarmHouse().getFroilan().mount(tractor);
+        farm.getFarmHouse().getFroilanda().mount(farm.cropDuster);
 
         //When:
         farm.cropDuster.operate(farm);
@@ -90,6 +96,8 @@ public class TractorTest {
     public void operate4Test() {
         //Given:
         CropRow currentCropRow = farm.field.getCropRow(4);
+        farm.getFarmHouse().getFroilan().mount(tractor);
+        farm.getFarmHouse().getFroilanda().mount(farm.cropDuster);
 
         //When:
         farm.cropDuster.operate(farm);
@@ -103,6 +111,8 @@ public class TractorTest {
     public void operate5Test() {
         //Given:
         CropRow currentCropRow = farm.field.getCropRow(5);
+        farm.getFarmHouse().getFroilan().mount(tractor);
+        farm.getFarmHouse().getFroilanda().mount(farm.cropDuster);
 
         //When:
         farm.cropDuster.operate(farm);
@@ -128,6 +138,8 @@ public class TractorTest {
     public void operateEdibleStorageFertilizedTest() {
         //Given:
         EdibleStorage currentStorage = farm.edibleStorage;
+        farm.getFarmHouse().getFroilan().mount(tractor);
+        farm.getFarmHouse().getFroilanda().mount(farm.cropDuster);
 
         //When:
         farm.cropDuster.operate(farm);
