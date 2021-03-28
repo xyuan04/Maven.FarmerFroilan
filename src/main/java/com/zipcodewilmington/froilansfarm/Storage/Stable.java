@@ -29,4 +29,8 @@ public class Stable {
 
         return iterator.next();
     }
+
+    public int sizeOfStable() {
+        return stable.size();
+    }
 }

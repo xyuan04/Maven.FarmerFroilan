@@ -29,4 +29,8 @@ public class ChickenCoop {
 
         return iterator.next();
     }
+
+    public int size() {
+        return chickenCoop.size();
+    }
 }

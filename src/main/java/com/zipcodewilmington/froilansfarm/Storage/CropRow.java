@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class CropRow {
-    ArrayList<Crop> crops;
+    public ArrayList<Crop> crops;
 
     public CropRow() {
         crops = new ArrayList<Crop>();
