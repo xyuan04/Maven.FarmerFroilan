@@ -37,4 +37,20 @@ public abstract class Vehicle implements NoiseMaker, Rideable {
     public void clearRides() {
         timesRode = 0;
     }
+
+    public Rider getCurrentRider() {
+        return currentRider;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public boolean isMounted() {
+        return mounted;
+    }
+
+    public int getTimesRode() {
+        return timesRode;
+    }
 }

@@ -6,8 +6,8 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
 public class Chicken extends Animal implements Produce<Egg> {
     private boolean fertilized = false;
 
-    public Chicken(String name) {
-        super(name, "Chicken");
+    public Chicken(String type) {
+        super(type);
     }
 
     public Egg yield() {
