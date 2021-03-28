@@ -16,10 +16,12 @@ public class CropDuster extends Aircraft implements FarmVehicle {
         currentFarm = farm;
         Field currentField = currentFarm.getField();
 
-        for(int i = 1; i <= currentField.sizeOfField(); i++) {
-            CropRow currentCropRow = currentField.getCropRow(i);
-            for (int j = 0; j < currentCropRow.sizeOfRow(); j++) {
-                currentCropRow.crops.get(j).fertilize();
+        if(isMounted()) {
+            for (int i = 1; i <= currentField.sizeOfField(); i++) {
+                CropRow currentCropRow = currentField.getCropRow(i);
+                for (int j = 0; j < currentCropRow.sizeOfRow(); j++) {
+                    currentCropRow.crops.get(j).fertilize();
+                }
             }
         }
     }
