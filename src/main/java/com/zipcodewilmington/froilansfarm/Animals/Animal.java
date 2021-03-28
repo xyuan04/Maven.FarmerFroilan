@@ -8,12 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Animal implements Eater<Vegetable>, NoiseMaker {
-    private String name;
     private String type;
     private List<Vegetable> foodEaten = new ArrayList<Vegetable>();
 
-    public Animal(String name, String type) {
-        this.name = name;
+    public Animal(String type) {
         this.type = type;
     }
 
@@ -45,7 +43,4 @@ public abstract class Animal implements Eater<Vegetable>, NoiseMaker {
         return "Noise";
     }
 
-    public String getName() {
-        return name;
-    }
 }

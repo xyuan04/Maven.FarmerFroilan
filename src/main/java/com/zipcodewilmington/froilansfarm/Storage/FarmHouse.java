@@ -1,36 +1,18 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
-import com.zipcodewilmington.froilansfarm.People.Person;
+import com.zipcodewilmington.froilansfarm.People.Farmer;
+import com.zipcodewilmington.froilansfarm.People.Pilot;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 
 public class FarmHouse {
-    private ArrayList<Person> farmHouse;
+    private Farmer froilan = new Farmer("Froilan");
+    private Pilot froilanda = new Pilot("Froilanda");
 
-    public FarmHouse() {
-        farmHouse = new ArrayList<Person>();
+    public Farmer getFroilan() {
+        return froilan;
     }
 
-    public ArrayList<Person> getFarmHouse() {
-        return farmHouse;
-    }
-
-    public void addPerson(Person person) {
-        farmHouse.add(person);
-    }
-
-    public void removePerson(Person person) {
-        farmHouse.remove(person);
-    }
-
-    public Person getPerson(String name) {
-        Iterator<Person> iterator = farmHouse.iterator();
-        if(iterator.hasNext()) {
-            if(iterator.next().getName().equals(name)) {
-                return iterator.next();
-            }
-        }
-        return null;
+    public Pilot getFroilanda() {
+        return froilanda;
     }
 }

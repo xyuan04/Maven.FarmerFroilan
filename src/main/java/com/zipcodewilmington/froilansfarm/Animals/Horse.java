@@ -8,9 +8,10 @@ public class Horse extends Animal implements Rideable {
     private boolean mounted = false;
     private int timesRode = 0;
 
-    public Horse(String name) {
-        super(name, "Horse");
+    public Horse(String type) {
+        super(type);
     }
+
 
     public int getTimesRode() {
         return timesRode;

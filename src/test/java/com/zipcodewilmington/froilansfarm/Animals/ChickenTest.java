@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ChickenTest {
-    Chicken earnie = new Chicken("Earnie");
+    Chicken earnie = new Chicken("Chicken");
     @Test
     public void fertilizeTest() {
         //Given: Above
