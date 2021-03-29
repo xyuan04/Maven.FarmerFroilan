@@ -11,24 +11,85 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CropDusterTest {
-    //    @Test
-//    public void testOperate() {
-//        //Given
-//        Farm farmZero = new Farm();
-//        CropDuster cd = new CropDuster();
-//
-//        //
-//        cd.operate(farmZero);
-//        Field current=farmZero.getField();
-//        System.out.println(current);
-//        CropRow cr=current.getCropRow(2);
-//
-//
-//        //Crop crop=current.getCrop();
-//
-//        //
-//        Assert.assertTrue(cr.getCrop().hasBeenFertilized());
-//    }
+    Farm farm = new Farm();
+
+    @Test
+    public void testOperateNoRider() {
+        //Given
+
+        //When
+        farm.cropDuster.operate(farm);
+        Crop crop = farm.field.getCropRow(1).getCrop();
+
+        //Then
+        Assert.assertFalse(crop.hasBeenFertilized());
+    }
+
+    @Test
+    public void testOperate() {
+        //Given
+
+        //When
+        farm.farmHouse.getFroilanda().mount(farm.cropDuster);
+        farm.cropDuster.operate(farm);
+        Crop crop = farm.field.getCropRow(1).getCrop();
+
+        //Then
+        Assert.assertTrue(crop.hasBeenFertilized());
+    }
+
+    @Test
+    public void testOperate2() {
+        //Given
+
+        //When
+        farm.farmHouse.getFroilanda().mount(farm.cropDuster);
+        farm.cropDuster.operate(farm);
+        Crop crop = farm.field.getCropRow(2).getCrop();
+
+        //Then
+        Assert.assertTrue(crop.hasBeenFertilized());
+    }
+
+    @Test
+    public void testOperate3() {
+        //Given
+
+        //When
+        farm.farmHouse.getFroilanda().mount(farm.cropDuster);
+        farm.cropDuster.operate(farm);
+        Crop crop = farm.field.getCropRow(3).getCrop();
+
+        //Then
+        Assert.assertTrue(crop.hasBeenFertilized());
+    }
+
+    @Test
+    public void testOperate4() {
+        //Given
+
+        //When
+        farm.farmHouse.getFroilanda().mount(farm.cropDuster);
+        farm.cropDuster.operate(farm);
+        Crop crop = farm.field.getCropRow(4).getCrop();
+
+        //Then
+        Assert.assertTrue(crop.hasBeenFertilized());
+    }
+
+    @Test
+    public void testOperate5() {
+        //Given
+
+        //When
+        farm.farmHouse.getFroilanda().mount(farm.cropDuster);
+        farm.cropDuster.operate(farm);
+        Crop crop = farm.field.getCropRow(5).getCrop();
+
+        //Then
+        Assert.assertTrue(crop.hasBeenFertilized());
+    }
+
     @Test
     public void testMakeNoise() {
         //Given
